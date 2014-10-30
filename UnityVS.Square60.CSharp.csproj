@@ -67,8 +67,6 @@
     <Compile Include="Assets\Scripts\UI\DisplayScoreScript.cs" />
     <Compile Include="Assets\Scripts\UI\HighScoresScript.cs" />
     <None Include="Assets\Art\Sprites\UI\Fonts\Fonts.txt" />
-    <None Include="Assets\Resources\Scores.xml" />
-    <None Include="Assets\Resources\Settings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

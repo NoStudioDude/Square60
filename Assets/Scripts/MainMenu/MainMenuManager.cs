@@ -4,16 +4,12 @@ using System.Collections;
 
 public class MainMenuManager : MonoBehaviour {
 
-    public Text highscore;
     public Animator playAnimator;
     public Animator playModesAnimator;
 
 	// Use this for initialization
 	void Start () {
-
-        int hs = PlayerPrefs.GetInt("highScore");
-        highscore.text = "High Score: " + hs;
-
+        
 	}
 
     void Update()
