@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Square60", "Square60\Square60.csproj", "{9E926836-CEB1-45F9-AC48-798AA52B5B80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x86 = Debug|x86
+		Master|ARM = Master|ARM
+		Master|x86 = Master|x86
+		Release|ARM = Release|ARM
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|ARM.ActiveCfg = Debug|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|ARM.Build.0 = Debug|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|ARM.Deploy.0 = Debug|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|x86.ActiveCfg = Debug|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|x86.Build.0 = Debug|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Debug|x86.Deploy.0 = Debug|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|ARM.ActiveCfg = Master|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|ARM.Build.0 = Master|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|ARM.Deploy.0 = Master|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|x86.ActiveCfg = Master|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|x86.Build.0 = Master|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Master|x86.Deploy.0 = Master|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|ARM.ActiveCfg = Release|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|ARM.Build.0 = Release|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|ARM.Deploy.0 = Release|ARM
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|x86.ActiveCfg = Release|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|x86.Build.0 = Release|x86
+		{9E926836-CEB1-45F9-AC48-798AA52B5B80}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

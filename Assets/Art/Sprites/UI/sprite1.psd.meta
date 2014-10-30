@@ -1,0 +1,410 @@
+fileFormatVersion: 2
+guid: 8d7a0fb500ac98e48af85811389f3a96
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: sprite1_0
+    21300002: bar_empty
+    21300004: bar_filler
+    21300006: sprite1_3
+    21300008: sprite1_4
+    21300010: sprite1_5
+    21300012: sprite1_6
+    21300014: sprite1_7
+    21300016: sprite1_8
+    21300018: sprite1_9
+    21300020: sprite1_10
+    21300022: sprite1_11
+    21300024: pause_btn
+    21300026: sprite1_13
+    21300028: sprite1_14
+    21300030: menu_btn
+    21300032: play_btn
+    21300034: reload_btn
+    21300036: sprite1_18
+    21300038: sound_btn
+    21300040: sprite1_20
+    21300042: sprite1_21
+    21300044: settings_btn
+    21300046: sprite1_23
+    21300048: music_white
+    21300050: sprite1_25
+    21300052: sprite1_26
+    21300054: sprite1_27
+    21300056: ban
+    21300058: sound_white
+    21300060: sprite1_31
+    21300062: sprite1_32
+    21300064: sprite1_33
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: sprite1_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 642
+        width: 424
+        height: 107
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bar_empty
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 704
+        width: 489
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: bar_filler
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 657
+        width: 357
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_3
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 494
+        width: 69
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_4
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 527
+        width: 88
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 506
+        width: 69
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 382
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_7
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 414
+        width: 82
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_8
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 380
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_9
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 413
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_10
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 415
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_11
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 417
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: pause_btn
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 329
+        width: 69
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_13
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 328
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_14
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 327
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu_btn
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 244
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: play_btn
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 244
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: reload_btn
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 245
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 8
+        width: 210
+        height: 207
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sound_btn
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 165
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_20
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 166
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_21
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 166
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: settings_btn
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 166
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_23
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 8
+        width: 108
+        height: 109
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: music_white
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 65
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_25
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 87
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_26
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 85
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_27
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 84
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ban
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 11
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sound_white
+      rect:
+        serializedVersion: 2
+        x: 724
+        y: 22
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_31
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 3
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_32
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sprite1_33
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 4
+        width: 69
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

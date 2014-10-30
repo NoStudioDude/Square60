@@ -1,0 +1,3 @@
+D:\Projects\Unity3D\Square60\obj\Debug\UnityVS.Square60.CSharp.csprojResolveAssemblyReference.cache
+D:\Projects\Unity3D\Square60\obj\Debug\Assembly-CSharp.dll
+D:\Projects\Unity3D\Square60\obj\Debug\Assembly-CSharp.pdb
