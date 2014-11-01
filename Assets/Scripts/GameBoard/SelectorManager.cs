@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class SelectorManager : MonoBehaviour {
 
-	class spawnElementClass
+    class spawnElementClass
 	{
 		public float posX = 0;
 		public int amount = 0;
@@ -19,10 +19,14 @@ public class SelectorManager : MonoBehaviour {
 	BlockElement lastElementSelected = null;
 	BlockElement firstSelection = null;
 	GameBoardManager gameBoardManager;
+    AudioSource audioSource;
+
+    int soundIndex = 0;
 
 	void Start()
 	{
 		gameBoardManager = transform.GetComponent<GameBoardManager>();
+        audioSource = transform.GetComponent<AudioSource>();
 	}
 
 	RaycastHit GetMouseToScreenRayInfo()
@@ -69,6 +73,8 @@ public class SelectorManager : MonoBehaviour {
 
 		if(Input.GetMouseButtonUp(0))
 		{
+            soundIndex = 0;
+
 			if(selectedBlockElements.Count >=2)
 			{
 				setScore();
@@ -103,6 +109,8 @@ public class SelectorManager : MonoBehaviour {
 		if(isSquare)
 		{
 			AddAllSameElementsIDsToCollection();
+
+            audioSource.Play();
 		}
 
 		SetScoreSingleSelection();
@@ -247,9 +255,12 @@ public class SelectorManager : MonoBehaviour {
 		if(isNeighbor && !IsOnSelectedList(eM))
 		{
 			eM.SelectItem();
-			selectedBlockElements.Add(eM);
+            eM.playSound(soundIndex);
 
+			selectedBlockElements.Add(eM);
 			lastElementSelected = eM;
+
+            soundIndex++;
 		}else
 		{
 			foreach(var e in selectedBlockElements)
@@ -302,7 +313,9 @@ public class SelectorManager : MonoBehaviour {
 	{
 		for(int c = selectedBlockElements.Count -1; c > pos; c--)
 		{
+            soundIndex--;
 			selectedBlockElements[c].UnselectItem();
+            selectedBlockElements[c].playSound(soundIndex);
 			selectedBlockElements.Remove(selectedBlockElements[c]);
 		}
 

@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera\BackgroundScript.cs" />
     <Compile Include="Assets\Scripts\Camera\ControllingCameraAspectScript.cs" />
     <Compile Include="Assets\Scripts\Elements\BlockElement.cs" />
     <Compile Include="Assets\Scripts\Elements\ElementCollidersScript.cs" />

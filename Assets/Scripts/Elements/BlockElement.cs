@@ -5,6 +5,10 @@ using System.Collections.Generic;
 [RequireComponent(typeof(SpriteRenderer))]
 public class BlockElement : MonoBehaviour {
 
+
+    public AudioClip[] bleepSounds;
+    AudioSource audioSource;
+    
 	public int ID;
 	public bool isSelected = false;
 	public int scoreValue = 0;
@@ -17,6 +21,8 @@ public class BlockElement : MonoBehaviour {
 
 		sr = transform.GetComponentInParent<SpriteRenderer>();
 		sr.sprite = spriteElement[0];
+
+        audioSource = transform.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -56,5 +62,14 @@ public class BlockElement : MonoBehaviour {
 		sr.sprite = spriteElement[0];
 		isSelected = false;	
 	}
+
+    public void playSound(int index)
+    {
+        if (audioSource != null)
+        {
+            audioSource.clip = bleepSounds[index];
+            audioSource.Play();
+        }
+    }
 
 }
