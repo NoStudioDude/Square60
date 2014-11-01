@@ -64,6 +64,9 @@ TextureImporter:
     21300118: lvl_locked_10
     21300120: top_bar_red
     21300122: top_bar
+    21300124: score_square
+    21300126: settings_square
+    21300128: play_square
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -722,6 +725,36 @@ TextureImporter:
         y: 8
         width: 800
         height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: score_square
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 735
+        width: 158
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: settings_square
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 663
+        width: 157
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: play_square
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 591
+        width: 159
+        height: 64
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
