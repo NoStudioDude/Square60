@@ -21,7 +21,7 @@ public class MainMenuManager : MonoBehaviour {
 
     public void OnPlayDown()
     {
-        
+        Application.LoadLevel(ScenesNames.SceneLevelSelector);
     }
 
     public void OnSettingsDown()

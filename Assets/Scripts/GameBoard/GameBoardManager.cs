@@ -10,58 +10,63 @@ public class GameBoardManager : MonoBehaviour {
 	public int currentScore = 0;
 	public GameObject parentBoard;
     
-    public bool isTimeAttack;
-
-    public GameObject gameObj;
-    public GameObject gameOverObject;
-
-    public Text tipText;
-    public Text timeLeftText;
+    public Text LeftText;
     public Text scoreValues;
     public float timeLeft = 0;
-    
+    public int movesLeft = 0;
+
+    public bool isSoundOn = true;
+
+    public bool isTime;
     public bool isStart = false;
     public bool isGameOver = false;
 
     int sizeX = 5;
     int sizeY = 5;
 
-    int tipTimeLeft = 10;
-    int lastTip = 0;
-    string[] tips = new string[] {"Tip: Join at least two cubes to score.", "Tip: Try to make longer chains for more points", "Tip: Make a square to remove all cubes of the same color"};
-
-	void Awake()
+    void Awake()
 	{
 		genPlayBoard();
 	}
 
 	void Start () {
-        timeLeftText.text = "" + timeLeft.ToString();
-
-        if (tipText != null)
-            InvokeRepeating("DisplayTips", tipTimeLeft, tipTimeLeft);
+        if(isTime)
+            LeftText.text = "" + timeLeft.ToString();
+        else
+            LeftText.text = "" + movesLeft.ToString();
 	}
 
 	void Update () {
 
+        if (isGameOver)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.LoadLevel("main_menu");
+            Application.LoadLevel(ScenesNames.SceneMainMenu);
         }
 
         if (isStart && !isGameOver)
         {
-            float timePassed = Time.deltaTime;
+            if (isTime)
+                checkForPassedTime();
+            else
+                checkForMoves();
 
-            if (timeLeft > 0)
-            {
-                timeLeft -= timePassed;
-            }
         }
-        
-        timeLeftText.text = "" + Mathf.FloorToInt(timeLeft);
-        scoreValues.text = "" + currentScore;
 
+        scoreValues.text = "" + currentScore;
+	}
+    void checkForPassedTime()
+    {
+        float timePassed = Time.deltaTime;
+
+        if (timeLeft > 0)
+        {
+            timeLeft -= timePassed;
+        }
+
+        LeftText.text = "" + Mathf.FloorToInt(timeLeft);
 
         //Check if time is over
         if (Mathf.FloorToInt(timeLeft) == 0 && !isGameOver)
@@ -70,22 +75,16 @@ public class GameBoardManager : MonoBehaviour {
             isGameOver = true;
 
             removeBoardCollection();
-
-            gameObj.SetActive(false);
-            gameOverObject.SetActive(true);
         }
-	}
-
-    void DisplayTips()
+        
+    }
+    void checkForMoves()
     {
-        if (lastTip > tips.Length -1)
+        if (movesLeft == 0)
         {
-            lastTip = 0;
+            isGameOver = true;
+            removeBoardCollection();
         }
-
-        tipText.text = tips[lastTip];
-
-        lastTip += 1;
     }
 
 	void genPlayBoard()
@@ -112,12 +111,10 @@ public class GameBoardManager : MonoBehaviour {
 
 		UpdateBoardCollection();
 	}
-
     GameObject[] GetAllBlockElements()
     {
-        return GameObject.FindGameObjectsWithTag("Element");
+        return GameObject.FindGameObjectsWithTag(TagNames.TagElements);
     }
-
 	public void UpdateBoardCollection()
 	{
         GameObject[] allElements = GetAllBlockElements();
@@ -131,7 +128,6 @@ public class GameBoardManager : MonoBehaviour {
 			board[e] = allElements[e].transform.GetComponent<BlockElement>();
 		
 	}
-
     public void removeBoardCollection()
     {
         GameObject[] allElements = GetAllBlockElements();

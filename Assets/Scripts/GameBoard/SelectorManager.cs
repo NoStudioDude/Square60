@@ -46,7 +46,7 @@ public class SelectorManager : MonoBehaviour {
         if (gameBoardManager.isGameOver)
         {
             if (selectedBlockElements.Count > 0)
-                CleanSelectedElements();
+                setScore();
                 
             return;
         }
@@ -61,7 +61,7 @@ public class SelectorManager : MonoBehaviour {
 			RaycastHit hit = GetMouseToScreenRayInfo();
 			if(hit.collider != null)
 			{
-				if(hit.collider.tag == "Element")
+				if(hit.collider.tag == TagNames.TagElements)
 				{
 					BlockElement bEle = hit.transform.GetComponent<BlockElement>();
 					selectElementWithThisID = bEle.ID;
@@ -110,7 +110,7 @@ public class SelectorManager : MonoBehaviour {
 		{
 			AddAllSameElementsIDsToCollection();
 
-            audioSource.Play();
+            //audioSource.Play();
 		}
 
 		SetScoreSingleSelection();
@@ -152,7 +152,7 @@ public class SelectorManager : MonoBehaviour {
 		gameBoardManager.currentScore += totalScore;
         InstatiateMissingElements();
 
-        if (gameBoardManager.isTimeAttack)
+        if (gameBoardManager.isTime)
         {
             if (isSquare)
             {
@@ -219,7 +219,7 @@ public class SelectorManager : MonoBehaviour {
 		
 		if(hit.collider != null)
 		{
-			if(hit.collider.tag == "Element")
+			if(hit.collider.tag == TagNames.TagElements)
 			{
 				BlockElement bEle = hit.collider.transform.GetComponent<BlockElement>();
 				if(bEle.ID == selectElementWithThisID)
@@ -255,7 +255,8 @@ public class SelectorManager : MonoBehaviour {
 		if(isNeighbor && !IsOnSelectedList(eM))
 		{
 			eM.SelectItem();
-            eM.playSound(soundIndex);
+            if(gameBoardManager.isSoundOn)
+                eM.playSound(soundIndex);
 
 			selectedBlockElements.Add(eM);
 			lastElementSelected = eM;
@@ -315,7 +316,9 @@ public class SelectorManager : MonoBehaviour {
 		{
             soundIndex--;
 			selectedBlockElements[c].UnselectItem();
-            selectedBlockElements[c].playSound(soundIndex);
+            if(gameBoardManager.isSoundOn)
+                selectedBlockElements[c].playSound(soundIndex);
+
 			selectedBlockElements.Remove(selectedBlockElements[c]);
 		}
 

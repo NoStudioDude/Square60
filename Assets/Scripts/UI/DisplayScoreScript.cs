@@ -15,10 +15,6 @@ public class DisplayScoreScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        if (gbManager.isTimeAttack)
-            highScore = PlayerPrefs.GetInt("highScoreArcade");
-        else
-            highScore = PlayerPrefs.GetInt("highScoreTime");
 	}
     
     void Update()
@@ -56,21 +52,15 @@ public class DisplayScoreScript : MonoBehaviour {
 
         best.text = "" + highScore;
 
-        if (gbManager.isTimeAttack)
-            PlayerPrefs.SetInt("highScoreArcade", highScore);
-        else
-            PlayerPrefs.SetInt("highScoreTime", highScore);
+    
         
     }
 
     public void OnPlayDown()
     {
-        if (gbManager.isTimeAttack)
-            Application.LoadLevel("Square_timeAttack");
-        else
-            Application.LoadLevel("Square_60seconds");
         
     }
+
     public void OnFacebookDown()
     { 
         

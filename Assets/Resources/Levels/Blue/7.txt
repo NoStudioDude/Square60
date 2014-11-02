@@ -1,0 +1,3 @@
+﻿Points:0
+Unlock3StarsPoints:1000
+UnlockedStars:0

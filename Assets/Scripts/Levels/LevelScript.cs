@@ -6,17 +6,17 @@ public class LevelScript : MonoBehaviour {
 
 
     public Sprite[] spriteLevel;
+    public string LevelPath;
     public int mylevel;
-    public LevelManager lvlManager;
     public bool isEnable;
     public int numberStars = 0;
 
     Image btnImg;
 
 	void Start () {
-        if (lvlManager == null || spriteLevel == null)
+        if (spriteLevel == null)
         {
-            Debug.LogError("Check public properties on LevelScript something is null");
+            Debug.LogError("spriteLevel is null");
             return;
         }
         btnImg = transform.GetComponent<Image>();
@@ -31,19 +31,12 @@ public class LevelScript : MonoBehaviour {
 
     void amIEnabled()
     {
-        for (int lvl = 0; lvl >= lvlManager.lvls.Level.Length; lvl++ )
+        Level lvl = ReadSaveXML.LoadDataFromLevel(LevelPath, mylevel);
+        if (lvl.Points >= lvl.Unlock3StarsPoints || isEnable)
         {
-            if (lvlManager.lvls.Level[lvl].number == mylevel)
-            {
-                if (lvlManager.lvls.Level[lvl].Points == lvlManager.lvls.Level[lvl].Unlock3StarsPoints || isEnable)
-                {
-                    btnImg.sprite = spriteLevel[1];
-                    isEnable = true;
-                    numberStars = lvlManager.lvls.Level[lvl].UnlockedStars;
-                }
-
-                break;
-            }
+            btnImg.sprite = spriteLevel[1];
+            isEnable = true;
+            numberStars = lvl.UnlockedStars;
         }
 
         if (!isEnable)
