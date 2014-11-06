@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Text;
 
 public class MainMenuManager : MonoBehaviour {
 

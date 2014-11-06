@@ -5,6 +5,9 @@ using System.Collections.Generic;
 
 public class GameBoardManager : MonoBehaviour {
 
+    public GameObject EndGame;
+    bool isEndGameShowing;
+
     public Transform[] blocks;
 	public BlockElement[] board;
 	public int currentScore = 0;
@@ -24,12 +27,7 @@ public class GameBoardManager : MonoBehaviour {
     int sizeX = 5;
     int sizeY = 5;
 
-    void Awake()
-	{
-		genPlayBoard();
-	}
-
-	void Start () {
+    void Start () {
         if(isTime)
             LeftText.text = "" + timeLeft.ToString();
         else
@@ -38,8 +36,14 @@ public class GameBoardManager : MonoBehaviour {
 
 	void Update () {
 
-        if (isGameOver)
+        if (isGameOver && !isEndGameShowing)
+        {
             return;
+        }
+        else if(isGameOver && isEndGameShowing)
+            return;
+
+
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -57,6 +61,17 @@ public class GameBoardManager : MonoBehaviour {
 
         scoreValues.text = "" + currentScore;
 	}
+    void LateUpdate()
+    {
+        if (isGameOver && !isEndGameShowing)
+        {
+            isEndGameShowing = true;
+            GameObject endgame = Instantiate(EndGame, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            endgame.transform.GetComponent<LevelFinishedScript>().gManager = this;
+        }
+    }
+
+
     void checkForPassedTime()
     {
         float timePassed = Time.deltaTime;
@@ -87,7 +102,7 @@ public class GameBoardManager : MonoBehaviour {
         }
     }
 
-	void genPlayBoard()
+	public void genPlayBoard()
 	{
 		float incrementValue = 0.8f;
 

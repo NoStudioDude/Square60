@@ -31,16 +31,33 @@ public class LevelScript : MonoBehaviour {
 
     void amIEnabled()
     {
-        Level lvl = ReadSaveXML.LoadDataFromLevel(LevelPath, mylevel);
-        if (lvl.Points >= lvl.Unlock3StarsPoints || isEnable)
+        int levelToCheck = getlevelToCheck();
+
+        Level lvl = ReadSaveXML.LoadDataFromLevel(LevelPath, levelToCheck);
+        if (lvl.Points >= (lvl.Unlock3StarsPoints / 2) || isEnable)
         {
+            if (mylevel == 1)
+                numberStars = lvl.UnlockedStars;
+            else
+            {
+                lvl = ReadSaveXML.LoadDataFromLevel(LevelPath, mylevel);
+                numberStars = lvl.UnlockedStars;
+            }
+
             btnImg.sprite = spriteLevel[1];
             isEnable = true;
-            numberStars = lvl.UnlockedStars;
         }
 
         if (!isEnable)
             btnImg.sprite = spriteLevel[0];
         
+    }
+
+    int getlevelToCheck()
+    {
+        if (mylevel > 1)
+            return mylevel - 1;
+        else
+            return mylevel;
     }
 }

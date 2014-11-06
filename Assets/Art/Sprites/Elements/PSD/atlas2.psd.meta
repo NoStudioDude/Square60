@@ -67,6 +67,10 @@ TextureImporter:
     21300124: score_square
     21300126: settings_square
     21300128: play_square
+    21300130: red_bar
+    21300132: green_bar
+    21300134: replay_square
+    21300136: menu_square
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -708,16 +712,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: top_bar_red
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 87
-        width: 800
-        height: 73
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: top_bar
       rect:
         serializedVersion: 2
@@ -755,6 +749,46 @@ TextureImporter:
         y: 591
         width: 159
         height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: red_bar
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 83
+        width: 399
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: green_bar
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 84
+        width: 397
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: replay_square
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 516
+        width: 158
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu_square
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 518
+        width: 158
+        height: 62
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

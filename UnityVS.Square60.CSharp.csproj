@@ -7,14 +7,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{9FC91D22-8A15-5299-53CA-1B31713215A0}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -65,15 +67,18 @@
     <Compile Include="Assets\Scripts\Globals\Helper\ResizeBackgroundToScreen.cs" />
     <Compile Include="Assets\Scripts\Globals\NamesHelper.cs" />
     <Compile Include="Assets\Scripts\Globals\ReadSaveXML.cs" />
-    <Compile Include="Assets\Scripts\Levels\Blue\1\TopBarChangeColors.cs" />
     <Compile Include="Assets\Scripts\Levels\Blue\BlueUIMAnager.cs" />
     <Compile Include="Assets\Scripts\Levels\LevelScript.cs" />
     <Compile Include="Assets\Scripts\Levels\StartsScript.cs" />
     <Compile Include="Assets\Scripts\Levels\UIManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Sounds\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\Sounds\UITimerSoundScript.cs" />
     <Compile Include="Assets\Scripts\UI\DisplayScoreScript.cs" />
+    <Compile Include="Assets\Scripts\UI\GetReadyScript.cs" />
     <Compile Include="Assets\Scripts\UI\HighScoresScript.cs" />
+    <Compile Include="Assets\Scripts\UI\LevelFinishedScript.cs" />
+    <Compile Include="Assets\Scripts\UI\TopBarColorScript.cs" />
     <None Include="Assets\Art\Sprites\UI\Fonts\Fonts.txt" />
     <None Include="Assets\Resources\Levels\Blue\1.txt" />
     <None Include="Assets\Resources\Levels\Blue\10.txt" />

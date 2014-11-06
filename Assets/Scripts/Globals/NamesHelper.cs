@@ -1,4 +1,11 @@
 ﻿
+public static class PlayerPrefsHelper
+{
+    public const string currentLevel = "currentLevel";
+    public const string currentFolderLevel = "currentFolderLevel";
+
+}
+
 public static class ScenesNames
 {
     public const string SceneMainMenu = "main_menu";

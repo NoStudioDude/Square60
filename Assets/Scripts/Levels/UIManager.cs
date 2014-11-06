@@ -4,8 +4,8 @@ using System.Collections;
 
 public class UIManager : MonoBehaviour {
 
-    public int myLevel;
-    public string LevelPath;
+    int myLevel;
+    string LevelPath;
     public Level thisLevel;
 
     public Sprite[] soundSprites;
@@ -15,6 +15,9 @@ public class UIManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        myLevel = PlayerPrefs.GetInt(PlayerPrefsHelper.currentLevel);
+        LevelPath = PlayerPrefs.GetString(PlayerPrefsHelper.currentFolderLevel);
+
         thisLevel = ReadSaveXML.LoadDataFromLevel(LevelPath, myLevel);
 
 	}

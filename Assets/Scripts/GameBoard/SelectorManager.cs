@@ -19,14 +19,14 @@ public class SelectorManager : MonoBehaviour {
 	BlockElement lastElementSelected = null;
 	BlockElement firstSelection = null;
 	GameBoardManager gameBoardManager;
-    AudioSource audioSource;
+//    AudioSource audioSource;
 
     int soundIndex = 0;
 
 	void Start()
 	{
 		gameBoardManager = transform.GetComponent<GameBoardManager>();
-        audioSource = transform.GetComponent<AudioSource>();
+        //audioSource = transform.GetComponent<AudioSource>();
 	}
 
 	RaycastHit GetMouseToScreenRayInfo()
@@ -45,8 +45,8 @@ public class SelectorManager : MonoBehaviour {
 
         if (gameBoardManager.isGameOver)
         {
-            if (selectedBlockElements.Count > 0)
-                setScore();
+            //if (selectedBlockElements.Count > 0)
+            //    CleanSelectedElements();
                 
             return;
         }
@@ -152,7 +152,7 @@ public class SelectorManager : MonoBehaviour {
 		gameBoardManager.currentScore += totalScore;
         InstatiateMissingElements();
 
-        if (gameBoardManager.isTime)
+        /*if (gameBoardManager.isTime)
         {
             if (isSquare)
             {
@@ -163,7 +163,8 @@ public class SelectorManager : MonoBehaviour {
                 var timeToAdd = numberOfSelectedBlocks * 0.25f;
                 gameBoardManager.timeLeft += timeToAdd;
             }
-        }
+        }*/
+
 	}
     void RemoveNeighbors(BlockElement eM)
     {
