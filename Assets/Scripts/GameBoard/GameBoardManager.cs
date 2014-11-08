@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,11 +17,10 @@ public class GameBoardManager : MonoBehaviour {
     public Text LeftText;
     public Text scoreValues;
     public float timeLeft = 0;
-    public int movesLeft = 0;
-
+    
+    public int totalTimeSurvived = 0;
     public bool isSoundOn = true;
 
-    public bool isTime;
     public bool isStart = false;
     public bool isGameOver = false;
 
@@ -28,22 +28,16 @@ public class GameBoardManager : MonoBehaviour {
     int sizeY = 5;
 
     void Start () {
-        if(isTime)
-            LeftText.text = "" + timeLeft.ToString();
-        else
-            LeftText.text = "" + movesLeft.ToString();
+        LeftText.text = "" + timeLeft.ToString();
+        isSoundOn = Convert.ToBoolean(PlayerPrefs.GetString(PlayerPrefsHelper.setting_Music));
+
+        totalTimeSurvived = Mathf.FloorToInt(timeLeft);
 	}
 
 	void Update () {
 
-        if (isGameOver && !isEndGameShowing)
-        {
+        if(isGameOver)
             return;
-        }
-        else if(isGameOver && isEndGameShowing)
-            return;
-
-
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -52,11 +46,7 @@ public class GameBoardManager : MonoBehaviour {
 
         if (isStart && !isGameOver)
         {
-            if (isTime)
-                checkForPassedTime();
-            else
-                checkForMoves();
-
+            checkForPassedTime();
         }
 
         scoreValues.text = "" + currentScore;
@@ -67,7 +57,7 @@ public class GameBoardManager : MonoBehaviour {
         {
             isEndGameShowing = true;
             GameObject endgame = Instantiate(EndGame, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-            endgame.transform.GetComponent<LevelFinishedScript>().gManager = this;
+            endgame.transform.GetComponent<GameOverScript>().gManager = this;
         }
     }
 
@@ -93,14 +83,6 @@ public class GameBoardManager : MonoBehaviour {
         }
         
     }
-    void checkForMoves()
-    {
-        if (movesLeft == 0)
-        {
-            isGameOver = true;
-            removeBoardCollection();
-        }
-    }
 
 	public void genPlayBoard()
 	{
@@ -110,7 +92,7 @@ public class GameBoardManager : MonoBehaviour {
 		{
 			for(float y = 0; y < sizeY; y+=incrementValue)
 			{
-				int rnd = Random.Range(0, blocks.Length);
+				int rnd = UnityEngine.Random.Range(0, blocks.Length);
 				Transform block = Instantiate(blocks[rnd], new Vector3(x, y, 0), Quaternion.identity) as Transform;
 				block.parent = parentBoard.transform;
                 block.gameObject.layer = parentBoard.gameObject.layer;

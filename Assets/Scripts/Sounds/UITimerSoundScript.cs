@@ -7,18 +7,14 @@ public class UITimerSoundScript : MonoBehaviour
     public GameBoardManager gbManager;
 
     bool isSoundRunning = false;
-    bool isTimerLevel = false;
     AudioSource audioSource;
 
     void Start()
     {
         audioSource = transform.GetComponent<AudioSource>();
-        isTimerLevel = gbManager.isTime;
     }
     void Update()
     {
-        if (!isTimerLevel)
-            return;
 
         if (gbManager.isStart && gbManager.timeLeft <= 10)
         {

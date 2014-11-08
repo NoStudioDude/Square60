@@ -4,6 +4,8 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: getReady
     21300002: LevelFinished
+    21300004: menu_score
+    21300006: tutorial
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -62,6 +64,26 @@ TextureImporter:
         y: 847
         width: 294
         height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: menu_score
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 847
+        width: 294
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tutorial
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 671
+        width: 294
+        height: 159
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

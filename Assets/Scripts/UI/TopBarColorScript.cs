@@ -7,18 +7,19 @@ public class TopBarColorScript : MonoBehaviour {
     public Image redImage;
     public Image greenImage;
 
+    public Sprite[] soundSprites;
+    public Image soundButton;
+
     public GameBoardManager gbManager;
 
-    Level currentLevel;
-	// Use this for initialization
+    
+    int highscore = 0;
+    // Use this for initialization
 	void Start () {
         redImage.enabled = false;
         greenImage.enabled = false;
 
-        int currentLevelNumber = PlayerPrefs.GetInt(PlayerPrefsHelper.currentLevel);
-        string currentFolderLevel = PlayerPrefs.GetString(PlayerPrefsHelper.currentFolderLevel);
-
-        currentLevel = ReadSaveXML.LoadDataFromLevel(currentFolderLevel, currentLevelNumber);
+        highscore = PlayerPrefs.GetInt(PlayerPrefsHelper.playerHighScore);
 	}
 	
 	// Update is called once per frame
@@ -30,11 +31,26 @@ public class TopBarColorScript : MonoBehaviour {
             {
                 redImage.enabled = true;
             }
-            if (gbManager.currentScore >= (currentLevel.Unlock3StarsPoints / 2))
+            if (gbManager.currentScore >= highscore)
             { 
                 greenImage.enabled = true;
             }
         }
 
 	}
+
+    public void OnSoundDown()
+    {
+        if (gbManager.isSoundOn)
+        {
+            gbManager.isSoundOn = false;
+            soundButton.sprite = soundSprites[1];
+        }
+        else
+        {
+            gbManager.isSoundOn = true;
+            soundButton.sprite = soundSprites[0];
+        }
+
+    }
 }

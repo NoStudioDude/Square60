@@ -5,15 +5,18 @@ using System.Collections.Generic;
 [RequireComponent(typeof(SpriteRenderer))]
 public class BlockElement : MonoBehaviour {
 
-
+    public Animator anim;
     public AudioClip[] bleepSounds;
     AudioSource audioSource;
-    
+
+
 	public int ID;
 	public bool isSelected = false;
 	public int scoreValue = 0;
 	public Sprite[] spriteElement;
 	public List<BlockElement> Neighbors = new List<BlockElement>();
+
+    public int plusTime = 0;
 
 	SpriteRenderer sr;
 	// Use this for initialization
@@ -23,6 +26,7 @@ public class BlockElement : MonoBehaviour {
 		sr.sprite = spriteElement[0];
 
         audioSource = transform.GetComponent<AudioSource>();
+        anim = transform.GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -41,6 +45,12 @@ public class BlockElement : MonoBehaviour {
 		currentVelocity.y = 0;
 		transform.GetComponent<Rigidbody>().velocity = currentVelocity;
 	}
+
+    public IEnumerator WaitAndDestroy(float wait)
+    {
+        yield return new WaitForSeconds(wait);
+        Destroy(transform.gameObject);
+    }
 
 	public void addNeighbor(BlockElement eM)
 	{

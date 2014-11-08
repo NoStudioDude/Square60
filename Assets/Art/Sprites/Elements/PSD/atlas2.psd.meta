@@ -71,6 +71,9 @@ TextureImporter:
     21300132: green_bar
     21300134: replay_square
     21300136: menu_square
+    21300138: submit_score
+    21300140: next_tutorial
+    21300142: title
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -789,6 +792,36 @@ TextureImporter:
         y: 518
         width: 158
         height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: submit_score
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 443
+        width: 157
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: next_tutorial
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 442
+        width: 157
+        height: 62
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 162
+        width: 386
+        height: 76
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -19,7 +19,7 @@ public class SelectorManager : MonoBehaviour {
 	BlockElement lastElementSelected = null;
 	BlockElement firstSelection = null;
 	GameBoardManager gameBoardManager;
-//    AudioSource audioSource;
+    //AudioSource audioSource;
 
     int soundIndex = 0;
 
@@ -44,13 +44,7 @@ public class SelectorManager : MonoBehaviour {
     void Update () {
 
         if (gameBoardManager.isGameOver)
-        {
-            //if (selectedBlockElements.Count > 0)
-            //    CleanSelectedElements();
-                
             return;
-        }
-			
 
 		if(Input.GetMouseButtonDown(0) && !isMouseDown)
 		{
@@ -94,7 +88,7 @@ public class SelectorManager : MonoBehaviour {
 	{
 		//Check if we made a square
         isSquare = false;
-		if(selectedBlockElements.Count >= 4)
+		if(selectedBlockElements.Count == 4)
 		{
 			foreach(var n in lastElementSelected.Neighbors)
 			{
@@ -109,7 +103,6 @@ public class SelectorManager : MonoBehaviour {
 		if(isSquare)
 		{
 			AddAllSameElementsIDsToCollection();
-
             //audioSource.Play();
 		}
 
@@ -141,9 +134,23 @@ public class SelectorManager : MonoBehaviour {
             SetHelperSpawnerClass(x);
 
 			totalScore += selectedBlockElements[e].scoreValue;
-            RemoveNeighbors(selectedBlockElements[e]);
+            gameBoardManager.timeLeft += selectedBlockElements[e].plusTime;
 
-			Destroy(selectedBlockElements[e].transform.gameObject);
+            RemoveNeighbors(selectedBlockElements[e]);
+			
+            //if (selectedBlockElements[e].anim != null)
+            //{
+            //    float wait = 0.4f;
+
+            //    Debug.Log("playing: " + selectedBlockElements[e].transform.gameObject.name);
+            //    selectedBlockElements[e].anim.SetTrigger("anim");
+                
+            //    Debug.Log("Waiting for destroying: " + selectedBlockElements[e].transform.gameObject.name);
+            //    selectedBlockElements[e].StartCoroutine(selectedBlockElements[e].WaitAndDestroy(wait));
+
+            //}else
+                Destroy(selectedBlockElements[e].transform.gameObject);
+            
 		}
 
         if (numberOfSelectedBlocks >= 4)
@@ -152,20 +159,7 @@ public class SelectorManager : MonoBehaviour {
 		gameBoardManager.currentScore += totalScore;
         InstatiateMissingElements();
 
-        /*if (gameBoardManager.isTime)
-        {
-            if (isSquare)
-            {
-                gameBoardManager.timeLeft += 2;
-            }
-            else
-            {
-                var timeToAdd = numberOfSelectedBlocks * 0.25f;
-                gameBoardManager.timeLeft += timeToAdd;
-            }
-        }*/
-
-	}
+    }
     void RemoveNeighbors(BlockElement eM)
     {
         foreach (BlockElement n in eM.Neighbors)
@@ -191,7 +185,6 @@ public class SelectorManager : MonoBehaviour {
         }
 		
 	}
-
 	void InstatiateMissingElements()
 	{
         float posY = GameObject.FindGameObjectWithTag("Spawn").transform.position.y;
