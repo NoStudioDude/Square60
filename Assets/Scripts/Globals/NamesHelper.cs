@@ -13,6 +13,7 @@ public static class PlayerPrefsHelper
 }
 public static class ScenesNames
 {
+    public const string SceneSettings = "settings_menu";
     public const string SceneMainMenu = "main_menu";
     public const string SceneLevelSelector = "level_selection";
     public const string SceneScoreMenu = "score_menu";

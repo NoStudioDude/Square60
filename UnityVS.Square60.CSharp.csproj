@@ -73,12 +73,14 @@
     <Compile Include="Assets\Scripts\Sounds\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Sounds\UITimerSoundScript.cs" />
     <Compile Include="Assets\Scripts\UI\DisplayScoreScript.cs" />
+    <Compile Include="Assets\Scripts\UI\GameButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverButtonsHandler.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverScript.cs" />
     <Compile Include="Assets\Scripts\UI\GetReadyScript.cs" />
     <Compile Include="Assets\Scripts\UI\HighScoresScript.cs" />
     <Compile Include="Assets\Scripts\UI\LevelFinishedScript.cs" />
     <Compile Include="Assets\Scripts\UI\ScoreMenuManager.cs" />
+    <Compile Include="Assets\Scripts\UI\SettingsUIManager.cs" />
     <Compile Include="Assets\Scripts\UI\TopBarColorScript.cs" />
     <Compile Include="Assets\Scripts\UI\TutorialUIManager.cs" />
     <None Include="Assets\Art\Sprites\UI\Fonts\Fonts.txt" />

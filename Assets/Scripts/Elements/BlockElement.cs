@@ -9,7 +9,6 @@ public class BlockElement : MonoBehaviour {
     public AudioClip[] bleepSounds;
     AudioSource audioSource;
 
-
 	public int ID;
 	public bool isSelected = false;
 	public int scoreValue = 0;
@@ -29,11 +28,6 @@ public class BlockElement : MonoBehaviour {
         anim = transform.GetComponent<Animator>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
 	void FixedUpdate()
 	{
 
@@ -77,6 +71,9 @@ public class BlockElement : MonoBehaviour {
     {
         if (audioSource != null)
         {
+            if (index > bleepSounds.Length -1)
+                return;
+            
             audioSource.clip = bleepSounds[index];
             audioSource.Play();
         }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class SelectorManager : MonoBehaviour {
 
+    public bool removeNextBlock = false;
+
     class spawnElementClass
 	{
 		public float posX = 0;
@@ -57,6 +59,12 @@ public class SelectorManager : MonoBehaviour {
 			{
 				if(hit.collider.tag == TagNames.TagElements)
 				{
+                    if (removeNextBlock)
+                    {
+                        RemoveSelectedBlock();
+                        return;
+                    }
+
 					BlockElement bEle = hit.transform.GetComponent<BlockElement>();
 					selectElementWithThisID = bEle.ID;
 					firstSelection = bEle;
@@ -340,5 +348,21 @@ public class SelectorManager : MonoBehaviour {
 		helperSpawner = new List<spawnElementClass>();
 		selectedBlockElements = new List<BlockElement>();
 	}
+
+    void RemoveSelectedBlock()
+    {
+        RaycastHit hit = GetMouseToScreenRayInfo();
+        if (hit.collider.tag == TagNames.TagElements)
+        {
+            helperSpawner = new List<SelectorManager.spawnElementClass>();
+            BlockElement bEle = hit.transform.GetComponent<BlockElement>();
+            helperSpawner.Add(new SelectorManager.spawnElementClass { amount = 1, posX = bEle.transform.position.x });
+
+            Destroy(hit.collider.gameObject);
+            InstatiateMissingElements();
+        }
+
+        removeNextBlock = false;
+    }
 }
 

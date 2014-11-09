@@ -39,18 +39,11 @@ public class MainMenuManager : MonoBehaviour {
     }
 
     public void OnSettingsDown()
-    { 
-        
+    {
+        Application.LoadLevel(ScenesNames.SceneSettings);
     }
     public void OnHighScoresDown()
     {
         Application.LoadLevel(ScenesNames.SceneScoreMenu);
     }
-
-    public void OnBackDown()
-    {
-        
-        
-    }
-
 }

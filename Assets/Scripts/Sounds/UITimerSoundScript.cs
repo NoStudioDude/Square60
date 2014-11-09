@@ -16,7 +16,7 @@ public class UITimerSoundScript : MonoBehaviour
     void Update()
     {
 
-        if (gbManager.isStart && gbManager.timeLeft <= 10)
+        if (gbManager.isStart && gbManager.timeLeft <= 10 && gbManager.isSoundOn)
         {
             if (!isSoundRunning)
             {
@@ -33,7 +33,7 @@ public class UITimerSoundScript : MonoBehaviour
 
     void PlayTimerSound()
     {
-        if (gbManager.isSoundOn) 
+        if (gbManager.isTimeRunning() && gbManager.isSoundOn)
             audioSource.Play();
     }
 }

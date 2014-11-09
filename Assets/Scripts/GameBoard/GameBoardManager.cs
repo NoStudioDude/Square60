@@ -24,8 +24,12 @@ public class GameBoardManager : MonoBehaviour {
     public bool isStart = false;
     public bool isGameOver = false;
 
+    public int blocksWithTime = 0;
+
     int sizeX = 5;
     int sizeY = 5;
+
+    bool isTimeFrozed = false;
 
     void Start () {
         LeftText.text = "" + timeLeft.ToString();
@@ -61,9 +65,23 @@ public class GameBoardManager : MonoBehaviour {
         }
     }
 
+    public IEnumerator StopTime()
+    {
+        isTimeFrozed = true;
+        yield return new WaitForSeconds(10f);
+
+        isTimeFrozed = false;
+    }
+    public bool isTimeRunning()
+    {
+        return isTimeFrozed ? false : true;
+    }
 
     void checkForPassedTime()
     {
+        if (isTimeFrozed)
+            return;
+            
         float timePassed = Time.deltaTime;
 
         if (timeLeft > 0)

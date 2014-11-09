@@ -74,6 +74,20 @@ TextureImporter:
     21300138: submit_score
     21300140: next_tutorial
     21300142: title
+    21300144: +5
+    21300146: +3
+    21300148: stoptime_active
+    21300150: stoptime_disable
+    21300152: stoptime_pressed
+    21300154: removeblock_active
+    21300156: removeblock_disable
+    21300158: removeblock_pressed
+    21300160: resetblocks_active
+    21300162: resetblocks_disable
+    21300164: resetblocks_pressed
+    21300166: title_mainmenu
+    21300168: title_settings
+    21300170: title_scores
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -822,6 +836,146 @@ TextureImporter:
         y: 162
         width: 386
         height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: +5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 21
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: +3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 19
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stoptime_active
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 378
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stoptime_disable
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 314
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: stoptime_pressed
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 250
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: removeblock_active
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 378
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: removeblock_disable
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 314
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: removeblock_pressed
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 250
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: resetblocks_active
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 378
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: resetblocks_disable
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 314
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: resetblocks_pressed
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 250
+        width: 151
+        height: 61
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_mainmenu
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 162
+        width: 89
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_settings
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 162
+        width: 81
+        height: 10
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: title_scores
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 162
+        width: 67
+        height: 10
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
