@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ElementCollidersScript : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class ElementCollidersScript : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
+
         if (owner.Neighbors.Count < 4)
         {
             if (col.tag == "Element")

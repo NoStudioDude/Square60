@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class GameButtonsHandler : MonoBehaviour {
 
-
     public Button stopTimeButton;
     public Button removeBlockButton;
     public Button resetBlocksButton;
@@ -32,13 +31,11 @@ public class GameButtonsHandler : MonoBehaviour {
         removeBlockButton.interactable = false;
         resetBlocksButton.interactable = false;
     }
-
     public void OnTimeStop()
     {
         stopTimeButton.interactable = false;
         gManager.StartCoroutine("StopTime");
     }
-
     public void OnRemoveBlock()
     {
         if (gManager.currentScore - 25 < 0)
@@ -48,7 +45,6 @@ public class GameButtonsHandler : MonoBehaviour {
 
         StartCoroutine("CountDownRemoveBlock");
     }
-
     IEnumerator CountDownRemoveBlock()
     {
         sManager.removeNextBlock = true;
@@ -57,17 +53,15 @@ public class GameButtonsHandler : MonoBehaviour {
         yield return new WaitForSeconds(30f);
         removeBlockButton.interactable = true;
     }
-
-
     public void OnResetBlocks()
     {
         StartCoroutine("OnResetBlocks");
     }
-
     IEnumerator CountDownResetBlocks()
     {
         resetBlocksButton.interactable = false;
         yield return new WaitForSeconds(60f);
         resetBlocksButton.interactable = true;
     }
+
 }

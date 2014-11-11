@@ -50,17 +50,17 @@ public static class ReadSaveXML {
 
         string fullLenghtPath = filePathRoot + LevelPath + "/" + Convert.ToString(LevelNumber);
 
-        FileInfo t = new FileInfo(fullLenghtPath);
-        if(t.Exists)
-            t.Delete();
+        //FileInfo t = new FileInfo(fullLenghtPath);
+        //if(t.Exists)
+        //    t.Delete();
 
-        using (StreamWriter sw = File.CreateText(fullLenghtPath + ".txt"))
-        {
-            sw.WriteLine(Encrypt("Points:" + Convert.ToString(_data.Points)));
-            sw.WriteLine(Encrypt("Unlock3StarsPoints:" + Convert.ToString(_data.Unlock3StarsPoints)));
-            sw.WriteLine(Encrypt("UnlockedStars:" + Convert.ToString(_data.UnlockedStars)));
-            sw.WriteLine("isEncrypted: 1");
-        }
+        //using (StreamWriter sw = File.CreateText(fullLenghtPath + ".txt"))
+        //{
+        //    sw.WriteLine(Encrypt("Points:" + Convert.ToString(_data.Points)));
+        //    sw.WriteLine(Encrypt("Unlock3StarsPoints:" + Convert.ToString(_data.Unlock3StarsPoints)));
+        //    sw.WriteLine(Encrypt("UnlockedStars:" + Convert.ToString(_data.UnlockedStars)));
+        //    sw.WriteLine("isEncrypted: 1");
+        //}
     }
 
     static string Encrypt(string clearText)
@@ -68,21 +68,21 @@ public static class ReadSaveXML {
         string EncryptionKey = "MAKV2SPBNI99212";
         byte[] clearBytes = Encoding.Unicode.GetBytes(clearText);
 
-        using (Aes encryptor = Aes.Create())
-        {
-            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-            encryptor.Key = pdb.GetBytes(32);
-            encryptor.IV = pdb.GetBytes(16);
-            using (MemoryStream ms = new MemoryStream())
-            {
-                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
-                {
-                    cs.Write(clearBytes, 0, clearBytes.Length);
-                    cs.Close();
-                }
-                clearText = Convert.ToBase64String(ms.ToArray());
-            }
-        }
+        //using (Aes encryptor = Aes.Create())
+        //{
+        //    Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+        //    encryptor.Key = pdb.GetBytes(32);
+        //    encryptor.IV = pdb.GetBytes(16);
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateEncryptor(), CryptoStreamMode.Write))
+        //        {
+        //            cs.Write(clearBytes, 0, clearBytes.Length);
+        //            cs.Close();
+        //        }
+        //        clearText = Convert.ToBase64String(ms.ToArray());
+        //    }
+        //}
 
         return clearText;
 
@@ -91,21 +91,21 @@ public static class ReadSaveXML {
     {
         string EncryptionKey = "MAKV2SPBNI99212";
         byte[] cipherBytes = Convert.FromBase64String(cipherText);
-        using (Aes encryptor = Aes.Create())
-        {
-            Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
-            encryptor.Key = pdb.GetBytes(32);
-            encryptor.IV = pdb.GetBytes(16);
-            using (MemoryStream ms = new MemoryStream())
-            {
-                using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
-                {
-                    cs.Write(cipherBytes, 0, cipherBytes.Length);
-                    cs.Close();
-                }
-                cipherText = Encoding.Unicode.GetString(ms.ToArray());
-            }
-        }
+        //using (Aes encryptor = Aes.Create())
+        //{
+        //    Rfc2898DeriveBytes pdb = new Rfc2898DeriveBytes(EncryptionKey, new byte[] { 0x49, 0x76, 0x61, 0x6e, 0x20, 0x4d, 0x65, 0x64, 0x76, 0x65, 0x64, 0x65, 0x76 });
+        //    encryptor.Key = pdb.GetBytes(32);
+        //    encryptor.IV = pdb.GetBytes(16);
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        using (CryptoStream cs = new CryptoStream(ms, encryptor.CreateDecryptor(), CryptoStreamMode.Write))
+        //        {
+        //            cs.Write(cipherBytes, 0, cipherBytes.Length);
+        //            cs.Close();
+        //        }
+        //        cipherText = Encoding.Unicode.GetString(ms.ToArray());
+        //    }
+        //}
         return cipherText;
     }
 }
