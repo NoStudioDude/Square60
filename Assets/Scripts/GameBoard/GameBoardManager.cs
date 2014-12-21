@@ -23,6 +23,7 @@ public class GameBoardManager : MonoBehaviour {
 
     public bool isStart = false;
     public bool isGameOver = false;
+    public bool isResetBoard = false;
 
     public int blocksWithTime = 0;
 
@@ -53,6 +54,12 @@ public class GameBoardManager : MonoBehaviour {
             checkForPassedTime();
         }
 
+        if (isResetBoard)
+        {            
+            removeBoardCollection();
+            isResetBoard = false;
+        }
+        
         scoreValues.text = "" + currentScore;
 	}
     void LateUpdate()
@@ -104,6 +111,9 @@ public class GameBoardManager : MonoBehaviour {
 
 	public void genPlayBoard()
 	{
+        if (parentBoard.transform.position != Vector3.zero)
+            parentBoard.transform.position = Vector3.zero;
+
 		float incrementValue = 0.8f;
 
 		for(float x = 0; x < sizeX; x+=incrementValue)
@@ -112,6 +122,7 @@ public class GameBoardManager : MonoBehaviour {
 			{
 				int rnd = UnityEngine.Random.Range(0, blocks.Length);
 				Transform block = Instantiate(blocks[rnd], new Vector3(x, y, 0), Quaternion.identity) as Transform;
+
 				block.parent = parentBoard.transform;
                 block.gameObject.layer = parentBoard.gameObject.layer;
                 block.name = "Block[" + x + "," + y + "," + "0" + "]ID: " + rnd;
@@ -154,5 +165,9 @@ public class GameBoardManager : MonoBehaviour {
             Destroy(allElements[e].gameObject);
 
         board = null;
+
+        if (isResetBoard)
+            genPlayBoard();
+        
     }
 }

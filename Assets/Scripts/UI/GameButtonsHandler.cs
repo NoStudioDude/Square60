@@ -55,13 +55,9 @@ public class GameButtonsHandler : MonoBehaviour {
     }
     public void OnResetBlocks()
     {
-        StartCoroutine("OnResetBlocks");
-    }
-    IEnumerator CountDownResetBlocks()
-    {
         resetBlocksButton.interactable = false;
-        yield return new WaitForSeconds(60f);
-        resetBlocksButton.interactable = true;
+        gManager.isResetBoard = true;
     }
+    
 
 }
