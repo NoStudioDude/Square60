@@ -1,0 +1,4 @@
+﻿Points:0
+Unlock3StarsPoints:1100
+UnlockedStars:0
+isEncrypted: 0

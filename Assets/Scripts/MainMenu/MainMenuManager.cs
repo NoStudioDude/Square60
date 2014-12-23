@@ -1,18 +1,25 @@
-﻿using UnityEngine;
+﻿using System.IO;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Text;
 
 public class MainMenuManager : MonoBehaviour {
 
-    public Text highscore;
-    public Animator playAnimator;
-    public Animator playModesAnimator;
-
 	// Use this for initialization
 	void Start () {
+        //Set Default Settings
+        if (!PlayerPrefs.HasKey(PlayerPrefsHelper.setting_Music))
+            PlayerPrefs.SetString(PlayerPrefsHelper.setting_Music, "true");
 
-        int hs = PlayerPrefs.GetInt("highScore");
-        highscore.text = "High Score: " + hs;
+        if (!PlayerPrefs.HasKey(PlayerPrefsHelper.setting_Tutorial))
+            PlayerPrefs.SetString(PlayerPrefsHelper.setting_Tutorial, "true");
+        
+        if (!PlayerPrefs.HasKey(PlayerPrefsHelper.playerHighScore))
+            PlayerPrefs.SetInt(PlayerPrefsHelper.playerHighScore, 0);
+        
+        if (!PlayerPrefs.HasKey(PlayerPrefsHelper.playerPlayTime))
+            PlayerPrefs.SetInt(PlayerPrefsHelper.playerPlayTime, 0);
 
 	}
 
@@ -28,30 +35,15 @@ public class MainMenuManager : MonoBehaviour {
 
     public void OnPlayDown()
     {
-        playAnimator.SetTrigger("Pressed");
-        playModesAnimator.SetTrigger("showModes");
+        Application.LoadLevel(ScenesNames.SceneMainLevel);
     }
 
-    public void OnArcadeDown()
+    public void OnSettingsDown()
     {
-        Application.LoadLevel("Square_timeAttack");
+        Application.LoadLevel(ScenesNames.SceneSettings);
     }
-
-    public void OnNormalDown()
-    {
-        Application.LoadLevel("Square_60seconds");
-    }
-
     public void OnHighScoresDown()
     {
-        Application.LoadLevel("square60_highScore");
+        Application.LoadLevel(ScenesNames.SceneScoreMenu);
     }
-
-    public void OnBackDown()
-    {
-        playModesAnimator.SetTrigger("hideModes");
-        playAnimator.SetTrigger("slideIn");
-        
-    }
-
 }

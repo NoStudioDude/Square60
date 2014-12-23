@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class SelectorManager : MonoBehaviour {
 
-	class spawnElementClass
+    public bool removeNextBlock = false;
+
+    class spawnElementClass
 	{
 		public float posX = 0;
 		public int amount = 0;
@@ -19,10 +21,14 @@ public class SelectorManager : MonoBehaviour {
 	BlockElement lastElementSelected = null;
 	BlockElement firstSelection = null;
 	GameBoardManager gameBoardManager;
+    //AudioSource audioSource;
+
+    int soundIndex = 0;
 
 	void Start()
 	{
 		gameBoardManager = transform.GetComponent<GameBoardManager>();
+        //audioSource = transform.GetComponent<AudioSource>();
 	}
 
 	RaycastHit GetMouseToScreenRayInfo()
@@ -40,13 +46,7 @@ public class SelectorManager : MonoBehaviour {
     void Update () {
 
         if (gameBoardManager.isGameOver)
-        {
-            if (selectedBlockElements.Count > 0)
-                CleanSelectedElements();
-                
             return;
-        }
-			
 
 		if(Input.GetMouseButtonDown(0) && !isMouseDown)
 		{
@@ -57,8 +57,14 @@ public class SelectorManager : MonoBehaviour {
 			RaycastHit hit = GetMouseToScreenRayInfo();
 			if(hit.collider != null)
 			{
-				if(hit.collider.tag == "Element")
+				if(hit.collider.tag == TagNames.TagElements)
 				{
+                    if (removeNextBlock)
+                    {
+                        RemoveSelectedBlock();
+                        return;
+                    }
+
 					BlockElement bEle = hit.transform.GetComponent<BlockElement>();
 					selectElementWithThisID = bEle.ID;
 					firstSelection = bEle;
@@ -69,6 +75,8 @@ public class SelectorManager : MonoBehaviour {
 
 		if(Input.GetMouseButtonUp(0))
 		{
+            soundIndex = 0;
+
 			if(selectedBlockElements.Count >=2)
 			{
 				setScore();
@@ -88,7 +96,7 @@ public class SelectorManager : MonoBehaviour {
 	{
 		//Check if we made a square
         isSquare = false;
-		if(selectedBlockElements.Count >= 4)
+		if(selectedBlockElements.Count == 4)
 		{
 			foreach(var n in lastElementSelected.Neighbors)
 			{
@@ -103,6 +111,7 @@ public class SelectorManager : MonoBehaviour {
 		if(isSquare)
 		{
 			AddAllSameElementsIDsToCollection();
+            //audioSource.Play();
 		}
 
 		SetScoreSingleSelection();
@@ -133,9 +142,23 @@ public class SelectorManager : MonoBehaviour {
             SetHelperSpawnerClass(x);
 
 			totalScore += selectedBlockElements[e].scoreValue;
-            RemoveNeighbors(selectedBlockElements[e]);
+            gameBoardManager.timeLeft += selectedBlockElements[e].plusTime;
 
-			Destroy(selectedBlockElements[e].transform.gameObject);
+            RemoveNeighbors(selectedBlockElements[e]);
+			
+            //if (selectedBlockElements[e].anim != null)
+            //{
+            //    float wait = 0.4f;
+
+            //    Debug.Log("playing: " + selectedBlockElements[e].transform.gameObject.name);
+            //    selectedBlockElements[e].anim.SetTrigger("anim");
+                
+            //    Debug.Log("Waiting for destroying: " + selectedBlockElements[e].transform.gameObject.name);
+            //    selectedBlockElements[e].StartCoroutine(selectedBlockElements[e].WaitAndDestroy(wait));
+
+            //}else
+                Destroy(selectedBlockElements[e].transform.gameObject);
+            
 		}
 
         if (numberOfSelectedBlocks >= 4)
@@ -144,19 +167,7 @@ public class SelectorManager : MonoBehaviour {
 		gameBoardManager.currentScore += totalScore;
         InstatiateMissingElements();
 
-        if (gameBoardManager.isTimeAttack)
-        {
-            if (isSquare)
-            {
-                gameBoardManager.timeLeft += 2;
-            }
-            else
-            {
-                var timeToAdd = numberOfSelectedBlocks * 0.25f;
-                gameBoardManager.timeLeft += timeToAdd;
-            }
-        }
-	}
+    }
     void RemoveNeighbors(BlockElement eM)
     {
         foreach (BlockElement n in eM.Neighbors)
@@ -182,7 +193,6 @@ public class SelectorManager : MonoBehaviour {
         }
 		
 	}
-
 	void InstatiateMissingElements()
 	{
         float posY = GameObject.FindGameObjectWithTag("Spawn").transform.position.y;
@@ -211,7 +221,7 @@ public class SelectorManager : MonoBehaviour {
 		
 		if(hit.collider != null)
 		{
-			if(hit.collider.tag == "Element")
+			if(hit.collider.tag == TagNames.TagElements)
 			{
 				BlockElement bEle = hit.collider.transform.GetComponent<BlockElement>();
 				if(bEle.ID == selectElementWithThisID)
@@ -247,9 +257,13 @@ public class SelectorManager : MonoBehaviour {
 		if(isNeighbor && !IsOnSelectedList(eM))
 		{
 			eM.SelectItem();
-			selectedBlockElements.Add(eM);
+            if(gameBoardManager.isSoundOn)
+                eM.playSound(soundIndex);
 
+			selectedBlockElements.Add(eM);
 			lastElementSelected = eM;
+
+            soundIndex++;
 		}else
 		{
 			foreach(var e in selectedBlockElements)
@@ -302,7 +316,11 @@ public class SelectorManager : MonoBehaviour {
 	{
 		for(int c = selectedBlockElements.Count -1; c > pos; c--)
 		{
+            soundIndex--;
 			selectedBlockElements[c].UnselectItem();
+            if(gameBoardManager.isSoundOn)
+                selectedBlockElements[c].playSound(soundIndex);
+
 			selectedBlockElements.Remove(selectedBlockElements[c]);
 		}
 
@@ -330,5 +348,21 @@ public class SelectorManager : MonoBehaviour {
 		helperSpawner = new List<spawnElementClass>();
 		selectedBlockElements = new List<BlockElement>();
 	}
+
+    void RemoveSelectedBlock()
+    {
+        RaycastHit hit = GetMouseToScreenRayInfo();
+        if (hit.collider.tag == TagNames.TagElements)
+        {
+            helperSpawner = new List<SelectorManager.spawnElementClass>();
+            BlockElement bEle = hit.transform.GetComponent<BlockElement>();
+            helperSpawner.Add(new SelectorManager.spawnElementClass { amount = 1, posX = bEle.transform.position.x });
+
+            Destroy(hit.collider.gameObject);
+            InstatiateMissingElements();
+        }
+
+        removeNextBlock = false;
+    }
 }
 

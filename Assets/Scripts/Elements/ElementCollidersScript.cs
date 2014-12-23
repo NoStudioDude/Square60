@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class ElementCollidersScript : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class ElementCollidersScript : MonoBehaviour {
 
     void OnTriggerStay(Collider col)
     {
+
         if (owner.Neighbors.Count < 4)
         {
             if (col.tag == "Element")
@@ -35,6 +37,30 @@ public class ElementCollidersScript : MonoBehaviour {
 			BlockElement bEle = col.collider.transform.GetComponent<BlockElement>();
 			owner.removeNeighbor(bEle);
 		}
-
 	}
+
+    void Update()
+    {
+        
+        bool isMissingElement = owner.Neighbors.Where(m => m == null).Count() > 0 ? true : false;
+
+        if (isMissingElement)
+            RemoveMissingElement();
+
+    }
+
+    void RemoveMissingElement()
+    {
+        Debug.Log("Element missing on Neighbors collection.");
+
+        for (int i = owner.Neighbors.Count - 1; i >= 0; i--)
+        {
+            if (owner.Neighbors[i] == null)
+            {
+                Debug.Log("Removing missing element");
+                owner.Neighbors.Remove(owner.Neighbors[i]);
+                break;
+            }
+        }
+    }
 }

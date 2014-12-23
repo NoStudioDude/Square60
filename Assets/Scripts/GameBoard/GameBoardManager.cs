@@ -1,67 +1,102 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 
 public class GameBoardManager : MonoBehaviour {
 
+    public GameObject EndGame;
+    bool isEndGameShowing;
+
     public Transform[] blocks;
 	public BlockElement[] board;
 	public int currentScore = 0;
 	public GameObject parentBoard;
     
-    public bool isTimeAttack;
-
-    public GameObject gameObj;
-    public GameObject gameOverObject;
-
-    public Text tipText;
-    public Text timeLeftText;
+    public Text LeftText;
     public Text scoreValues;
     public float timeLeft = 0;
     
+    public int totalTimeSurvived = 0;
+    public bool isSoundOn = true;
+
     public bool isStart = false;
     public bool isGameOver = false;
+    public bool isResetBoard = false;
+
+    public int blocksWithTime = 0;
 
     int sizeX = 5;
     int sizeY = 5;
 
-    int tipTimeLeft = 10;
-    int lastTip = 0;
-    string[] tips = new string[] {"Tip: Join at least two cubes to score.", "Tip: Try to make longer chains for more points", "Tip: Make a square to remove all cubes of the same color"};
+    bool isTimeFrozed = false;
 
-	void Awake()
-	{
-		genPlayBoard();
-	}
+    void Start () {
+        LeftText.text = "" + timeLeft.ToString();
+        isSoundOn = Convert.ToBoolean(PlayerPrefs.GetString(PlayerPrefsHelper.setting_Music));
 
-	void Start () {
-        timeLeftText.text = "" + timeLeft.ToString();
-
-        if (tipText != null)
-            InvokeRepeating("DisplayTips", tipTimeLeft, tipTimeLeft);
+        totalTimeSurvived = Mathf.FloorToInt(timeLeft);
 	}
 
 	void Update () {
 
+        if(isGameOver)
+            return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.LoadLevel("main_menu");
+            Application.LoadLevel(ScenesNames.SceneMainMenu);
         }
 
         if (isStart && !isGameOver)
         {
-            float timePassed = Time.deltaTime;
+            checkForPassedTime();
+        }
 
-            if (timeLeft > 0)
-            {
-                timeLeft -= timePassed;
-            }
+        if (isResetBoard)
+        {            
+            removeBoardCollection();
+            isResetBoard = false;
         }
         
-        timeLeftText.text = "" + Mathf.FloorToInt(timeLeft);
         scoreValues.text = "" + currentScore;
+	}
+    void LateUpdate()
+    {
+        if (isGameOver && !isEndGameShowing)
+        {
+            isEndGameShowing = true;
+            GameObject endgame = Instantiate(EndGame, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            endgame.transform.GetComponent<GameOverScript>().gManager = this;
+        }
+    }
 
+    public IEnumerator StopTime()
+    {
+        isTimeFrozed = true;
+        yield return new WaitForSeconds(10f);
+
+        isTimeFrozed = false;
+    }
+    public bool isTimeRunning()
+    {
+        return isTimeFrozed ? false : true;
+    }
+
+    void checkForPassedTime()
+    {
+        if (isTimeFrozed)
+            return;
+            
+        float timePassed = Time.deltaTime;
+
+        if (timeLeft > 0)
+        {
+            timeLeft -= timePassed;
+        }
+
+        LeftText.text = "" + Mathf.FloorToInt(timeLeft);
 
         //Check if time is over
         if (Mathf.FloorToInt(timeLeft) == 0 && !isGameOver)
@@ -70,34 +105,24 @@ public class GameBoardManager : MonoBehaviour {
             isGameOver = true;
 
             removeBoardCollection();
-
-            gameObj.SetActive(false);
-            gameOverObject.SetActive(true);
         }
-	}
-
-    void DisplayTips()
-    {
-        if (lastTip > tips.Length -1)
-        {
-            lastTip = 0;
-        }
-
-        tipText.text = tips[lastTip];
-
-        lastTip += 1;
+        
     }
 
-	void genPlayBoard()
+	public void genPlayBoard()
 	{
+        if (parentBoard.transform.position != Vector3.zero)
+            parentBoard.transform.position = Vector3.zero;
+
 		float incrementValue = 0.8f;
 
 		for(float x = 0; x < sizeX; x+=incrementValue)
 		{
 			for(float y = 0; y < sizeY; y+=incrementValue)
 			{
-				int rnd = Random.Range(0, blocks.Length);
+				int rnd = UnityEngine.Random.Range(0, blocks.Length);
 				Transform block = Instantiate(blocks[rnd], new Vector3(x, y, 0), Quaternion.identity) as Transform;
+
 				block.parent = parentBoard.transform;
                 block.gameObject.layer = parentBoard.gameObject.layer;
                 block.name = "Block[" + x + "," + y + "," + "0" + "]ID: " + rnd;
@@ -112,12 +137,10 @@ public class GameBoardManager : MonoBehaviour {
 
 		UpdateBoardCollection();
 	}
-
     GameObject[] GetAllBlockElements()
     {
-        return GameObject.FindGameObjectsWithTag("Element");
+        return GameObject.FindGameObjectsWithTag(TagNames.TagElements);
     }
-
 	public void UpdateBoardCollection()
 	{
         GameObject[] allElements = GetAllBlockElements();
@@ -131,7 +154,6 @@ public class GameBoardManager : MonoBehaviour {
 			board[e] = allElements[e].transform.GetComponent<BlockElement>();
 		
 	}
-
     public void removeBoardCollection()
     {
         GameObject[] allElements = GetAllBlockElements();
@@ -143,5 +165,9 @@ public class GameBoardManager : MonoBehaviour {
             Destroy(allElements[e].gameObject);
 
         board = null;
+
+        if (isResetBoard)
+            genPlayBoard();
+        
     }
 }

@@ -1,3 +1,14 @@
 D:\Projects\Unity3D\Square60\obj\Debug\UnityVS.Square60.CSharp.csprojResolveAssemblyReference.cache
 D:\Projects\Unity3D\Square60\obj\Debug\Assembly-CSharp.dll
 D:\Projects\Unity3D\Square60\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEditor.dll
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEngine.dll
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEngine.xml
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEditor.xml
+C:\Users\Rui\Documents\GitHub\Square60\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+C:\Users\Rui\Documents\GitHub\Square60\obj\Debug\Assembly-CSharp.dll
+C:\Users\Rui\Documents\GitHub\Square60\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Rui\Documents\GitHub\Square60\obj\Debug\UnityVS.Square60.CSharp.csprojResolveAssemblyReference.cache

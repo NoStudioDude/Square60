@@ -38,6 +38,8 @@ TextureImporter:
     21300066: time_play
     21300068: high_scores
     21300070: back_button
+    21300072: timeup
+    21300074: 60
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -159,16 +161,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: fb_open
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 311
-        width: 115
-        height: 50
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: scoreEnd
       rect:
         serializedVersion: 2
@@ -199,16 +191,6 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: fb_half
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 253
-        width: 76
-        height: 50
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
     - name: 48_yellow
       rect:
         serializedVersion: 2
@@ -216,16 +198,6 @@ TextureImporter:
         y: 236
         width: 48
         height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: fb_close
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 192
-        width: 50
-        height: 52
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -282,10 +254,10 @@ TextureImporter:
     - name: arcada_play
       rect:
         serializedVersion: 2
-        x: 131
-        y: 29
-        width: 105
-        height: 65
+        x: 132
+        y: 30
+        width: 103
+        height: 63
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +274,10 @@ TextureImporter:
     - name: high_scores
       rect:
         serializedVersion: 2
-        x: 359
+        x: 363
         y: 30
-        width: 108
-        height: 65
+        width: 103
+        height: 63
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -316,6 +288,26 @@ TextureImporter:
         y: 91
         width: 103
         height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: timeup
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 303
+        width: 103
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: 60
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 236
+        width: 104
+        height: 65
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
