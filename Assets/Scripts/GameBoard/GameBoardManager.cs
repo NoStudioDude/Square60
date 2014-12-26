@@ -14,11 +14,12 @@ public class GameBoardManager : MonoBehaviour {
 	public int currentScore = 0;
 	public GameObject parentBoard;
     
-    public Text LeftText;
+    public Text timeText;
     public Text scoreValues;
+	public Text highscore;
     public float timeLeft = 0;
     
-    public int totalTimeSurvived = 0;
+    public int totalTimePlayed = 0;
     public bool isSoundOn = true;
 
     public bool isStart = false;
@@ -31,12 +32,13 @@ public class GameBoardManager : MonoBehaviour {
     int sizeY = 5;
 
     bool isTimeFrozed = false;
-
+	float currentTimePlayed = 0;
     void Start () {
-        LeftText.text = "" + timeLeft.ToString();
+		timeText.text = Convert.ToString(timeLeft);
+		highscore.text = Convert.ToString(PlayerPrefs.GetInt(PlayerPrefsHelper.playerHighScore));
         isSoundOn = Convert.ToBoolean(PlayerPrefs.GetString(PlayerPrefsHelper.setting_Music));
 
-        totalTimeSurvived = Mathf.FloorToInt(timeLeft);
+		totalTimePlayed = PlayerPrefs.GetInt(PlayerPrefsHelper.playerPlayTime);
 	}
 
 	void Update () {
@@ -52,6 +54,9 @@ public class GameBoardManager : MonoBehaviour {
         if (isStart && !isGameOver)
         {
             checkForPassedTime();
+
+			var timepassed = Time.deltaTime;
+			currentTimePlayed += timepassed;
         }
 
         if (isResetBoard)
@@ -60,7 +65,7 @@ public class GameBoardManager : MonoBehaviour {
             isResetBoard = false;
         }
         
-        scoreValues.text = "" + currentScore;
+        scoreValues.text = Convert.ToString(currentScore);
 	}
     void LateUpdate()
     {
@@ -93,16 +98,18 @@ public class GameBoardManager : MonoBehaviour {
 
         if (timeLeft > 0)
         {
-            timeLeft -= timePassed;
+			timeLeft -= timePassed;
         }
 
-        LeftText.text = "" + Mathf.FloorToInt(timeLeft);
+		timeText.text = Convert.ToString(Mathf.FloorToInt(timeLeft));
 
         //Check if time is over
         if (Mathf.FloorToInt(timeLeft) == 0 && !isGameOver)
         {
             timeLeft = 0;
             isGameOver = true;
+
+			totalTimePlayed = Mathf.FloorToInt(currentTimePlayed);
 
             removeBoardCollection();
         }

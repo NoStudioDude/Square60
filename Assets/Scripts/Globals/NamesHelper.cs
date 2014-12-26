@@ -1,14 +1,14 @@
 ﻿
 public static class PlayerPrefsHelper
 {
-    public const string currentLevel = "currentLevel";
-    public const string currentFolderLevel = "currentFolderLevel";
-    
-    public const string playerHighScore = "highScore";
+	public const string playerHighScore = "highScore";
+    public const string playerTimesplayed = "playerTotalPlays";
     public const string playerPlayTime = "playerPlayTime";
 
     public const string setting_Music = "setting_Music";
     public const string setting_Tutorial = "settings_Tutorial";
+
+	public const string tutorial_via_mainmenu = "tutorial_via_mainmenu";
     
 }
 public static class ScenesNames
@@ -18,6 +18,7 @@ public static class ScenesNames
     public const string SceneLevelSelector = "level_selection";
     public const string SceneScoreMenu = "score_menu";
     public const string SceneMainLevel = "main_level";
+	public const string SceneTutorialLevel = "tutorial_level";
 
     #region BlueLevels
 
