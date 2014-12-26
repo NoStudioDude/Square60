@@ -1,0 +1,15 @@
+TODO LIST:
+
+In Game:
+	1 - Change timer. Instead display a bar that goes down.
+	2 - Power-ups will be given depending on how good the player is doing.
+		If doing bad, give some help, if doing good, give less goodies.
+	3 - Leaderboard (google/facebook)
+	4 - Facebook integration for sharing
+	
+UI:
+	1 - GET A FUCKING ICON FOR THE GAME!! LOL
+	2 - Make the tutorial button nicer (it fucking suck as it is now)..
+	3 - Themes?! (Player can select a theme for the game)
+	
+

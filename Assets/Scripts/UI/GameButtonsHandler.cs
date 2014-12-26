@@ -13,6 +13,8 @@ public class GameButtonsHandler : MonoBehaviour {
     GameBoardManager gManager;
     SelectorManager sManager;
 
+	public bool DEGUG_MODE = false;
+
     void Start()
     {
         gManager = gOManager.GetComponent<GameBoardManager>();
@@ -55,7 +57,7 @@ public class GameButtonsHandler : MonoBehaviour {
     }
     public void OnResetBlocks()
     {
-        resetBlocksButton.interactable = false;
+		if(!DEGUG_MODE) resetBlocksButton.interactable = false;
         gManager.isResetBoard = true;
     }
     

@@ -11,4 +11,10 @@ public class GameOverButtonsHandler : MonoBehaviour {
     {
         Application.LoadLevel(ScenesNames.SceneMainLevel);
     }
+
+	public void OnShare()
+	{
+
+
+	}
 }

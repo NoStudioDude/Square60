@@ -5,7 +5,7 @@ public class BlueUIMAnager : MonoBehaviour {
 
     public void OnLevelDown(LevelScript lvlScript)
     {
-        if (lvlScript.isEnable)
+        /*if (lvlScript.isEnable)
         {
             switch (lvlScript.LevelPath)
             {
@@ -65,7 +65,7 @@ public class BlueUIMAnager : MonoBehaviour {
                     break;
 
             }
-        }
+        }*/
 
     }
 }

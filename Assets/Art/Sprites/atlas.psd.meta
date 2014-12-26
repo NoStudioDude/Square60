@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: 4c97adcf9febee6478689a65a8c27860
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: round_big_blue_play
+    21300002: round_blue_play
+    21300004: round_blue_fb
+    21300006: round_blue_close
+    21300008: ui_game
+    21300010: ui_statistics
+    21300012: round_blue_sound
+    21300014: round_blue_rate
+    21300016: round_blue_menu
+    21300018: round_big_red_play
+    21300020: round_red_play
+    21300022: round_red_fb
+    21300024: close
+    21300026: round_red_sound
+    21300028: round_red_rate
+    21300030: round_red_menu
+    21300032: UI_timer
+    21300034: round_225px_blue_play
+    21300036: round_blue_soundOFF
+    21300038: round_blue_tutorial
+    21300040: round_blue_highscore
+    21300042: tutoria_1
+    21300044: tutorial_2
+    21300046: UI_arrow
+    21300048: tutorial_painel
+    21300050: UI_finger
+    21300052: UI_mainmenu_statistics
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: round_big_blue_play
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 1909
+        width: 104
+        height: 110
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_play
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1969
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_fb
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1970
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_close
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1967
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ui_game
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1959
+        width: 484
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: ui_statistics
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 1392
+        width: 308
+        height: 539
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_sound
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1889
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_rate
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 1890
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_menu
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1889
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_big_red_play
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1714
+        width: 104
+        height: 104
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_red_play
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 1780
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_red_fb
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 1780
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: close
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 1777
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_red_sound
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1698
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_red_rate
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 1701
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_red_menu
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 1702
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_timer
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1644
+        width: 411
+        height: 16
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_225px_blue_play
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1377
+        width: 231
+        height: 233
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_soundOFF
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 1966
+        width: 72
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_tutorial
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 1374
+        width: 105
+        height: 113
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: round_blue_highscore
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1884
+        width: 73
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tutoria_1
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 1806
+        width: 464
+        height: 122
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tutorial_2
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1679
+        width: 462
+        height: 118
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_arrow
+      rect:
+        serializedVersion: 2
+        x: 1313
+        y: 1884
+        width: 123
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: tutorial_painel
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1552
+        width: 463
+        height: 118
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_finger
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 1789
+        width: 46
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: UI_mainmenu_statistics
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 839
+        width: 301
+        height: 533
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

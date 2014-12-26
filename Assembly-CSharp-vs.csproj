@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{B6F049EB-439F-80BB-E5E4-CA562DF38555}</ProjectGuid>
+	<ProjectGuid>{5A36CFF6-13A0-E847-399E-06F8C1CAADBE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Camera\BackgroundScript.cs" />
      <Compile Include="Assets\Scripts\Camera\ControllingCameraAspectScript.cs" />
      <Compile Include="Assets\Scripts\Elements\BlockElement.cs" />
      <Compile Include="Assets\Scripts\Elements\ElementCollidersScript.cs" />
@@ -57,11 +58,42 @@
      <Compile Include="Assets\Scripts\Globals\Helper\DrawLineScript.cs" />
      <Compile Include="Assets\Scripts\Globals\Helper\MovingCloudsScript.cs" />
      <Compile Include="Assets\Scripts\Globals\Helper\ResizeBackgroundToScreen.cs" />
+     <Compile Include="Assets\Scripts\Globals\NamesHelper.cs" />
+     <Compile Include="Assets\Scripts\Globals\ReadSaveXML.cs" />
+     <Compile Include="Assets\Scripts\Levels\Blue\BlueUIMAnager.cs" />
+     <Compile Include="Assets\Scripts\Levels\LevelScript.cs" />
+     <Compile Include="Assets\Scripts\Levels\StartsScript.cs" />
+     <Compile Include="Assets\Scripts\Levels\UIManager.cs" />
      <Compile Include="Assets\Scripts\MainMenu\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Sounds\UITimerSoundScript.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\BoardTutorial.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\SelectorTutorial.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialFingerMove.cs" />
+     <Compile Include="Assets\Scripts\Tutorial\TutorialManager.cs" />
      <Compile Include="Assets\Scripts\UI\DisplayScoreScript.cs" />
+     <Compile Include="Assets\Scripts\UI\GameButtonsHandler.cs" />
+     <Compile Include="Assets\Scripts\UI\GameOverButtonsHandler.cs" />
+     <Compile Include="Assets\Scripts\UI\GameOverScript.cs" />
+     <Compile Include="Assets\Scripts\UI\GetReadyScript.cs" />
      <Compile Include="Assets\Scripts\UI\HighScoresScript.cs" />
+     <Compile Include="Assets\Scripts\UI\LevelFinishedScript.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreMenuManager.cs" />
+     <Compile Include="Assets\Scripts\UI\SettingsUIManager.cs" />
+     <Compile Include="Assets\Scripts\UI\TimeColorScript.cs" />
+     <Compile Include="Assets\Scripts\UI\TutorialUIManager.cs" />
+     <None Include="Assets\Resources\Levels\Blue\5.txt" />
+     <None Include="Assets\Resources\Levels\Blue\3.txt" />
+     <None Include="Assets\Resources\Levels\Blue\8.txt" />
+     <None Include="Assets\Resources\Levels\Blue\4.txt" />
+     <None Include="Assets\Resources\Levels\Blue\10.txt" />
+     <None Include="Assets\Resources\Levels\Blue\6.txt" />
+     <None Include="Assets\Resources\Levels\Blue\9.txt" />
+     <None Include="Assets\TODO.txt" />
+     <None Include="Assets\Resources\Levels\Blue\1.txt" />
      <None Include="Assets\Art\Sprites\UI\Fonts\Fonts.txt" />
+     <None Include="Assets\Resources\Levels\Blue\7.txt" />
+     <None Include="Assets\Resources\Levels\Blue\2.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>

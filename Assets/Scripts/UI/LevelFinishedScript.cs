@@ -5,7 +5,7 @@ using System.Collections;
 
 public class LevelFinishedScript : MonoBehaviour {
 
-    public Image starImage;
+    /*public Image starImage;
     public Image newScore;
 
     public Text textInfo;
@@ -19,14 +19,14 @@ public class LevelFinishedScript : MonoBehaviour {
     string[] levelEndTexts = { "Is this game that hard?!", "Too bad, you didn't got enough points to unlock the next level", "Good, you got enough points to play the next level", "Awesome job." };
 
     int currentLevel = 0;
-    string currentFolderLevel;
+    //string currentFolderLevel;
     Level thisLevel;
 
 	void Start () {
-        currentLevel = PlayerPrefs.GetInt(PlayerPrefsHelper.currentLevel);
-        currentFolderLevel = PlayerPrefs.GetString(PlayerPrefsHelper.currentFolderLevel);
+        //currentLevel = PlayerPrefs.GetInt(PlayerPrefsHelper.currentLevel);
+        //currentFolderLevel = PlayerPrefs.GetString(PlayerPrefsHelper.currentFolderLevel);
         
-        thisLevel = ReadSaveXML.LoadDataFromLevel(currentFolderLevel, currentLevel);
+        //thisLevel = ReadSaveXML.LoadDataFromLevel(currentFolderLevel, currentLevel);
 
         textHighscore.text = "" + thisLevel.Points;
         textCurrentscore.text = "" + gManager.currentScore;
@@ -78,7 +78,7 @@ public class LevelFinishedScript : MonoBehaviour {
         LevelScript thisLevelScript = new LevelScript();
         thisLevelScript.isEnable = true;
         thisLevelScript.mylevel = currentLevel;
-        thisLevelScript.LevelPath = currentFolderLevel;
+        //thisLevelScript.LevelPath = currentFolderLevel;
 
         levelSelector.OnLevelDown(thisLevelScript);
     }
@@ -88,6 +88,6 @@ public class LevelFinishedScript : MonoBehaviour {
             ReadSaveXML.SaveData(thisLevel, currentFolderLevel, currentLevel);
 
         Application.LoadLevel(ScenesNames.SceneLevelSelector);
-    }
+    }*/
 
 }
